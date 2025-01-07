@@ -119,3 +119,18 @@ searchForm.addEventListener("submit", function(event){
 
 getProducts()
 
+
+fetch('https://fakestoreapi.com/products',{
+    method:"POST",
+    body:JSON.stringify(
+        {
+            title: "Fashion Men's Snake Print Belt Automatic Buckle"
+            price: 40.50,
+            description: "Snakeskin Embossed Belt Genuine Leather Designer Jeans Belts (Black, 110CM)",
+            image: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.com%2FFashion-Automatic-Snakeskin-Embossed-Designer%2Fdp%2FB0841T26PB&psig=AOvVaw22CZYQV-_LwPOqL0oV7Lq-&ust=1736297238890000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCODk78mx4ooDFQAAAAAdAAAAABAc',
+            category: 'Accessories'
+        }
+    )
+})
+    .then(res=>res.json())
+    .then(json=>console.log(json))
